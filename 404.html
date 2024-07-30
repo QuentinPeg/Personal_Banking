@@ -14,7 +14,8 @@
       // Redirection vers l'URL correcte en préfixant le chemin de base
       var pathname = window.location.pathname;
       var origin = window.location.origin;
-      var newUrl = origin  + pathname + window.location.search;
+      console.log(pathname, origin);
+      var newUrl = origin  + pathname ;
       window.location.replace(newUrl);
     </script>
   </body>
