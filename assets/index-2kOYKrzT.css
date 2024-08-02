@@ -659,10 +659,6 @@ video {
     height: 100%
 }
 
-.max-h-\[75px\] {
-    max-height: 75px
-}
-
 .w-1\/2 {
     width: 50%
 }
@@ -720,10 +716,6 @@ video {
 
 .max-w-\[100px\] {
     max-width: 100px
-}
-
-.max-w-\[75px\] {
-    max-width: 75px
 }
 
 .max-w-lg {
@@ -814,22 +806,6 @@ video {
 
 .overflow-auto {
     overflow: auto
-}
-
-.overflow-hidden {
-    overflow: hidden
-}
-
-.text-ellipsis {
-    text-overflow: ellipsis
-}
-
-.whitespace-normal {
-    white-space: normal
-}
-
-.break-words {
-    overflow-wrap: break-word
 }
 
 .rounded {
