@@ -1,0 +1,16 @@
+name: Supabase Ping
+
+on:
+  schedule:
+    # Exécute la tâche tous les jours à minuit (00:00)
+    - cron: '0 0 * * *'
+
+jobs:
+  ping_supabase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Envoyer un ping à Supabase
+        run: |
+          curl -X GET "https://kbkzeihbxlpsvkjpczms.supabase.co" \
+          -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
+          -H "Content-Type: application/json"
