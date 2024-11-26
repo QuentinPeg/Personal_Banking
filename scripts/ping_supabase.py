@@ -3,7 +3,7 @@ import os
 
 # Récupération des variables d'environnement
 SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_ANON_KEY  = os.getenv("SUPABASE_ANON_KEY ")
+SUPABASE_ANON_KEY  = os.getenv("SUPABASE_ANON_KEY")
 
 def ping_database():
     if not SUPABASE_URL or not SUPABASE_ANON_KEY :
