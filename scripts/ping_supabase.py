@@ -16,7 +16,7 @@ def ping_database():
     }
 
     # Exemple : Ping une table ou une requête minimale
-    response = requests.get(f"{SUPABASE_URL}/rest/v1/your_table_name", headers=headers)
+    response = requests.get(f"{SUPABASE_URL}/rest/v1/accounts", headers=headers)
     
     if response.status_code == 200:
         print("Ping réussi :", response.json())
