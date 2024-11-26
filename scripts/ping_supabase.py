@@ -3,16 +3,16 @@ import os
 
 # Récupération des variables d'environnement
 SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+SUPABASE_KEY = os.getenv("SUPABASE_ANON_KEY ")
 
 def ping_database():
-    if not SUPABASE_URL or not SUPABASE_KEY:
+    if not SUPABASE_URL or not SUPABASE_ANON_KEY :
         print("Les variables d'environnement SUPABASE_URL et SUPABASE_KEY ne sont pas définies.")
         return
     
     headers = {
-        "apikey": SUPABASE_KEY,
-        "Authorization": f"Bearer {SUPABASE_KEY}"
+        "apikey": SUPABASE_ANON_KEY ,
+        "Authorization": f"Bearer {SUPABASE_ANON_KEY }"
     }
 
     # Exemple : Ping une table ou une requête minimale
