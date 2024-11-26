@@ -1,6 +1,5 @@
 name: Ping Supabase
 
-# Déclencheurs du workflow
 on:
   schedule:
     - cron: '*/5 * * * *' # Exécute toutes les 5 minutes
@@ -17,7 +16,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9' # Ou une autre version compatible avec votre code
+          python-version: '3.9'
 
       - name: Install dependencies
         run: |
@@ -27,5 +26,5 @@ jobs:
       - name: Run ping script
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_ANON_KEY : ${{ secrets.SUPABASE_ANON_KEY  }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         run: python scripts/ping_supabase.py
