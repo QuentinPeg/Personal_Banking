@@ -27,5 +27,5 @@ jobs:
       - name: Run ping script
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          SUPABASE_ANON_KEY : ${{ secrets.SUPABASE_ANON_KEY  }}
         run: python scripts/ping_supabase.py
