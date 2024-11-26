@@ -3,7 +3,7 @@ name: Ping Supabase
 # Déclencheurs du workflow
 on:
   schedule:
-    - cron: '0 * * * *' # Exécute toutes les heures
+    - cron: '*/5 * * * *' # Exécute toutes les 5 minutes
   workflow_dispatch: # Permet l'exécution manuelle
 
 jobs:
