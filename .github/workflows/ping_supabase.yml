@@ -1,16 +1,31 @@
-name: Supabase Ping
+name: Ping Supabase
 
+# Déclencheurs du workflow
 on:
   schedule:
-    # Exécute la tâche tous les jours à minuit (00:00)
-    - cron: '0 0 * * *'
+    - cron: '0 * * * *' # Exécute toutes les heures
+  workflow_dispatch: # Permet l'exécution manuelle
 
 jobs:
-  ping_supabase:
+  ping-database:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Envoyer un ping à Supabase
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9' # Ou une autre version compatible avec votre code
+
+      - name: Install dependencies
         run: |
-          curl -X GET "https://kbkzeihbxlpsvkjpczms.supabase.co" \
-          -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
-          -H "Content-Type: application/json"
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run ping script
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: python scripts/ping_supabase.py
